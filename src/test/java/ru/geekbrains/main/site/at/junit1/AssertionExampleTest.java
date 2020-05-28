@@ -41,8 +41,8 @@ public class AssertionExampleTest {
     }
 
     @Test
-    public void timeDuration(){
-        assertTimeout(Duration.ofMillis(700),()->{
+    public void timeDuration() {
+        assertTimeout(Duration.ofMillis(700), () -> {
             sleep(600);
         });
     }

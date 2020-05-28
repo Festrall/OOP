@@ -12,27 +12,27 @@ public class AnnotationExampleTest {
 
     @Disabled
     @Test
-    public void test01(){
+    public void test01() {
         assertTrue(true);
     }
 
     @DisplayName("Проверка истинности имени")
     @Test
-    public void test02(){
+    public void test02() {
         assertTrue(true);
     }
 
     @RepeatedTest(20)
     @DisplayName("проверка истинности значения")
     @Test
-    public void test03(){
+    public void test03() {
         int x = new Random().nextInt(20);
-        assertTrue(x>10);
+        assertTrue(x > 10);
     }
 
     @Timeout(2)
     @Test
-    public void test04() throws InterruptedException{
+    public void test04() throws InterruptedException {
         sleep(1900);
         assertTrue(true);
 
