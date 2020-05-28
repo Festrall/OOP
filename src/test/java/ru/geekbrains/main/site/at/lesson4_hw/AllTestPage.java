@@ -1,10 +1,12 @@
 package ru.geekbrains.main.site.at.lesson4_hw;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AllTestPage extends BaseTest {
 
@@ -14,9 +16,9 @@ public class AllTestPage extends BaseTest {
         WebElement careerNavItemButton = driver.findElement(By.cssSelector("nav>a[href='/career']"));
         careerNavItemButton.click();
         header = driver.findElement(By.className("gb-header__title")).getText();
-        Assertions.assertEquals("Карьера", header);
+        assertEquals("Карьера", header);
         WebElement footer = driver.findElement(By.cssSelector("footer.site-footer"));
-        Assertions.assertTrue(footer.isDisplayed());
+        assertTrue(footer.isDisplayed());
 
     }
 
@@ -28,9 +30,10 @@ public class AllTestPage extends BaseTest {
         WebDriverWait wait = new WebDriverWait(driver, 5);
         //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         header = driver.findElement(By.className("gb-header__title")).getText();
-        Assertions.assertEquals("Курсы", header);
+        assertEquals("Курсы", header);
         WebElement footer = driver.findElement(By.cssSelector("footer.site-footer"));
-        Assertions.assertTrue(footer.isDisplayed());
+        assertTrue(footer.isDisplayed());
+
     }
 
     @Test
@@ -38,9 +41,9 @@ public class AllTestPage extends BaseTest {
         // Поиск кнопки "Вебинары" в панели навигации.
         driver.findElement(By.cssSelector("nav>a[href='/events']")).click();
         header = driver.findElement(By.className("gb-header__title")).getText();
-        Assertions.assertEquals("Вебинары", header);
+        assertEquals("Вебинары", header);
         WebElement footer = driver.findElement(By.cssSelector("footer.site-footer"));
-        Assertions.assertTrue(footer.isDisplayed());
+        assertTrue(footer.isDisplayed());
     }
 
     @Test
@@ -48,9 +51,9 @@ public class AllTestPage extends BaseTest {
         // Поиск кнопки "Форум" в панели навигации.
         driver.findElement(By.cssSelector("nav>a[href='/topics']")).click();
         header = driver.findElement(By.className("gb-header__title")).getText();
-        Assertions.assertEquals("Форум", header);
+        assertEquals("Форум", header);
         WebElement footer = driver.findElement(By.cssSelector("footer.site-footer"));
-        Assertions.assertTrue(footer.isDisplayed());
+        assertTrue(footer.isDisplayed());
     }
 
     @Test
@@ -58,9 +61,9 @@ public class AllTestPage extends BaseTest {
         // Поиск кнопки "Тесты" в панели навигации.
         driver.findElement(By.cssSelector("nav>a[href='/tests']")).click();
         header = driver.findElement(By.className("gb-header__title")).getText();
-        Assertions.assertEquals("Тесты", header);
+        assertEquals("Тесты", header);
         WebElement footer = driver.findElement(By.cssSelector("footer.site-footer"));
-        Assertions.assertTrue(footer.isDisplayed());
+        assertTrue(footer.isDisplayed());
     }
 
     @Test
@@ -68,8 +71,8 @@ public class AllTestPage extends BaseTest {
         // Поиск кнопки "Блог" в панели навигации.
         driver.findElement(By.cssSelector("nav>a[href='/posts']")).click();
         header = driver.findElement(By.className("gb-header__title")).getText();
-        Assertions.assertEquals("Блог", header);
+        assertEquals("Блог", header);
         WebElement footer = driver.findElement(By.cssSelector("footer.site-footer"));
-        Assertions.assertTrue(footer.isDisplayed());
+        assertTrue(footer.isDisplayed());
     }
 }

@@ -8,6 +8,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
+
 public class SearchTest extends BaseTest {
     String professionCount;
 
@@ -28,7 +31,9 @@ public class SearchTest extends BaseTest {
         professionCount = driver
                 .findElement(By.xpath("//ul[@class = 'search-page-tabs']/li/a[@data-tab = 'professions']/child::span"))
                 .getText();
-        Assertions.assertTrue(Integer.parseInt(professionCount) >= 2);
+        // Assertions.assertTrue(Integer.parseInt(professionCount) >= 2);
+        assertThat(Integer.parseInt(professionCount), greaterThanOrEqualTo(2));
+
 
         WebElement coursesTab = driver
                 .findElement(By.cssSelector("ul[class='search-page-tabs']>li>a[data-tab='courses']"));
@@ -36,7 +41,8 @@ public class SearchTest extends BaseTest {
         professionCount = driver
                 .findElement(By.xpath("//ul[@class = 'search-page-tabs']/li/a[@data-tab = 'courses']/child::span"))
                 .getText();
-        Assertions.assertTrue(Integer.parseInt(professionCount) > 15);
+        //Assertions.assertTrue(Integer.parseInt(professionCount) > 15);
+        assertThat(Integer.parseInt(professionCount), greaterThan(15));
 
 
         WebElement webinarsTab = driver
@@ -45,7 +51,11 @@ public class SearchTest extends BaseTest {
         professionCount = driver
                 .findElement(By.xpath("//ul[@class = 'search-page-tabs']/li/a[@data-tab = 'webinars']/child::span"))
                 .getText();
-        Assertions.assertTrue(Integer.parseInt(professionCount) > 180 && Integer.parseInt(professionCount) < 300);
+        //Assertions.assertTrue(Integer.parseInt(professionCount) > 180 && Integer.parseInt(professionCount) < 300);
+        assertThat(Integer.parseInt(professionCount), allOf(
+                greaterThan(180),
+                lessThan(300)
+        ));
 
         WebElement blogsTab = driver
                 .findElement(By.cssSelector("ul[class='search-page-tabs']>li>a[data-tab='blogs']"));
@@ -53,7 +63,8 @@ public class SearchTest extends BaseTest {
         professionCount = driver
                 .findElement(By.xpath("//ul[@class = 'search-page-tabs']/li/a[@data-tab = 'blogs']/child::span"))
                 .getText();
-        Assertions.assertTrue(Integer.parseInt(professionCount) > 300);
+        //Assertions.assertTrue(Integer.parseInt(professionCount) > 300);
+        assertThat(Integer.parseInt(professionCount), greaterThan(300));
 
         WebElement forumsTab = driver
                 .findElement(By.cssSelector("ul[class='search-page-tabs']>li>a[data-tab='forums']"));
@@ -61,7 +72,8 @@ public class SearchTest extends BaseTest {
         professionCount = driver
                 .findElement(By.xpath("//ul[@class = 'search-page-tabs']/li/a[@data-tab = 'forums']/child::span"))
                 .getText();
-        Assertions.assertTrue(Integer.parseInt(professionCount) != 350);
+        //Assertions.assertTrue(Integer.parseInt(professionCount) != 350);
+        assertThat(Integer.parseInt(professionCount), not(equalTo(350)));
 
         WebElement testsTab = driver
                 .findElement(By.cssSelector("ul[class='search-page-tabs']>li>a[data-tab='tests']"));
@@ -69,7 +81,8 @@ public class SearchTest extends BaseTest {
         professionCount = driver
                 .findElement(By.xpath("//ul[@class = 'search-page-tabs']/li/a[@data-tab = 'tests']/child::span"))
                 .getText();
-        Assertions.assertTrue(Integer.parseInt(professionCount) != 0);
+        //Assertions.assertTrue(Integer.parseInt(professionCount) != 0);
+        assertThat(Integer.parseInt(professionCount), not(equalTo(0)));
 
         WebElement companiesTab = driver
                 .findElement(By.cssSelector("ul[class='search-page-tabs']>li>a[data-tab='companies']"));

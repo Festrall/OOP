@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Stream;
 
 
 public abstract class BaseTest {
@@ -27,6 +28,10 @@ public abstract class BaseTest {
         driver.get(BASE_URL + "/career");
         // Открывал окно только на половину - не было видно навигационного меню. Поиск не осуществлялся корректно.
         driver.manage().window().maximize();
+    }
+
+    public static Stream<String> stringGenerator() {
+        return Stream.of("Тесты", "Блог", "Курсы", "Форум", "Карьера", "Вебинары");
     }
 
 
