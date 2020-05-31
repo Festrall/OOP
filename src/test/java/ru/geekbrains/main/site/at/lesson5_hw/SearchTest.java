@@ -1,18 +1,24 @@
-package ru.geekbrains.main.site.at.lesson5;
+package ru.geekbrains.main.site.at.lesson5_hw;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import ru.geekbrains.main.site.at.lesson5.base.BaseTest;
+import ru.geekbrains.main.site.at.lesson5_hw.base.BaseTest;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
 public class SearchTest extends BaseTest {
+
+    @BeforeEach
+    public void openSite() {
+        driver.get(BASE_URL + "/courses");
+    }
     String professionCount;
 
     @Test

@@ -1,4 +1,4 @@
-package ru.geekbrains.main.site.at.lesson5;
+package ru.geekbrains.main.site.at.lesson5_hw;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -6,7 +6,7 @@ import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-import ru.geekbrains.main.site.at.lesson5.base.BaseTest;
+import ru.geekbrains.main.site.at.lesson5_hw.base.BaseTest;
 import ru.geekbrains.main.site.at.pages.NavigationTab;
 
 import java.util.stream.Stream;

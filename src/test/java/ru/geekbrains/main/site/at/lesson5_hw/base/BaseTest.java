@@ -1,4 +1,4 @@
-package ru.geekbrains.main.site.at.lesson5.base;
+package ru.geekbrains.main.site.at.lesson5_hw.base;
 
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -30,11 +30,6 @@ public abstract class BaseTest {
         // Открывал окно только на половину - не было видно навигационного меню. Поиск не осуществлялся корректно.
         driver.manage().window().maximize();
     }
-
-    public static Stream<String> stringGenerator() {
-        return Stream.of("Тесты", "Блог", "Курсы", "Форум", "Карьера", "Вебинары");
-    }
-
 
     @AfterEach
     public void tearDown() {
