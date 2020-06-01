@@ -26,7 +26,7 @@ public abstract class BaseTest {
         options.addArguments("--disable-popup-blocking");
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.get(BASE_URL + "/career");
+       // driver.get(BASE_URL + "/career");
         // Открывал окно только на половину - не было видно навигационного меню. Поиск не осуществлялся корректно.
         driver.manage().window().maximize();
     }
